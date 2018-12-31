@@ -20,7 +20,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={history}>
+        <Router history={history} basename={process.env.PUBLIC_URL}>
             <Route component={Layout}>
                 <Route path='/' component={Phones} />
             </Route>
