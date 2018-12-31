@@ -7,6 +7,7 @@ A dummy e-commerce site intended for testing purposes.
 
 ## Installation
 - Checkout from Git
+- Run `yarn install`
 - Run `yarn start`
 
 ## Stack
