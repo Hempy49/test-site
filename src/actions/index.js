@@ -6,11 +6,11 @@ import {
     FETCH_PHONE_BY_ID_SUCCESS,
     FETCH_PHONE_BY_ID_FAILURE,
     ADD_PHONE_TO_BASKET
-} from 'actionTypes';
+} from '../actionTypes';
 import {
     fetchPhones as fetchPhonesApi,
     fetchPhoneById as fetchPhoneByIdApi
-} from 'api';
+} from '../api/index';
 
 export const fetchPhones = () => async dispatch => {
     try {

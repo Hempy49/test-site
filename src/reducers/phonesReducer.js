@@ -2,7 +2,7 @@ import R from 'ramda';
 import {
     FETCH_PHONES_SUCCESS, 
     FETCH_PHONE_BY_ID_SUCCESS
-} from 'actionTypes';
+} from '../actionTypes';
 
 const initialState = {};
 

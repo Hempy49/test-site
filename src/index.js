@@ -5,12 +5,13 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import {syncHistoryWithStore} from 'react-router-redux';
 import {Router, Route, browserHistory} from 'react-router';
+// import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
-import reducers from 'reducers';
-import Layout from 'containers/layout/layout';
-import Phones from 'containers/phones/phones';
-import Phone from 'containers/phone/phone';
+import reducers from '../src/reducers';
+import Layout from '../src/containers/layout/layout';
+import Phones from '../src/containers/phones/phones';
+import Phone from '../src/containers/phone/phone';
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(thunk)
@@ -20,7 +21,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={history} basename={process.env.PUBLIC_URL}>
+        <Router history={history}>
             <Route component={Layout}>
                 <Route path='/' component={Phones} />
             </Route>

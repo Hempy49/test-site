@@ -1,7 +1,7 @@
 import R from 'ramda';
 import {
     FETCH_PHONES_SUCCESS
-} from 'actionTypes';
+} from '../actionTypes';
 
 const initialState = {
     ids: []
