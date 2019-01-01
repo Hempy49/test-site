@@ -4,8 +4,7 @@ import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import {syncHistoryWithStore} from 'react-router-redux';
-import {Router, Route, browserHistory, hashHistory} from 'react-router';
-import {HashRouter} from 'react-router-dom';
+import {Router, Route, hashHistory} from 'react-router';
 import {Provider} from 'react-redux';
 
 import reducers from '../src/reducers';

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPhones, fetchPhoneById } from '../../actions/index';
-import { getPhones, getPhoneById } from '../../selectors';
-// import { Link } from 'react-router';
+import { fetchPhoneById, addPhoneToBasket } from '../../actions/index';
+import { getPhoneById } from '../../selectors';
+import BasketCart from '../../components/basketCart';
+import {Link} from 'react-router';
 
 class Phone extends Component {
     componentDidMount() {
@@ -26,6 +27,30 @@ class Phone extends Component {
         )
     }
 
+    renderSidebar () {
+        const {phone, addPhoneToBasket} = this.props;
+        return (
+            <div>
+                <p className='lead'>Quick shop</p>
+                <BasketCart />
+                <div className='form-group'>
+                <h1>{phone.name}</h1>
+                <h2>${phone.price}</h2>
+                </div>
+                <Link to='/' className='btn btn-info btn-block'>
+                Back to store
+                </Link>
+                <button
+                type='button'
+                className='btn btn-success btn-block'
+                onClick={() => addPhoneToBasket(phone.id)} 
+                >
+                Add to cart
+                </button>
+            </div>
+        )
+    }
+
     render() {
         const { phone } = this.props;
         return (
@@ -34,6 +59,9 @@ class Phone extends Component {
                     <div className='row'>
                         <div className='col-md-9'>
                             {phone && this.renderContent()}
+                        </div>
+                        <div className='col-md-3'>
+                            {phone && this.renderSidebar()}
                         </div>
                     </div>
                 </div>
@@ -47,7 +75,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchtoProps = {
-    fetchPhoneById
+    fetchPhoneById,
+    addPhoneToBasket
 }
 
-export default connect(mapStateToProps, mapDispatchtoProps)(Phone)
+export default connect(mapStateToProps, mapDispatchtoProps)(Phone)   
