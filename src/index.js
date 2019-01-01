@@ -4,8 +4,8 @@ import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import {syncHistoryWithStore} from 'react-router-redux';
-import {Router, Route, browserHistory} from 'react-router';
-// import {BrowserRouter} from 'react-router-dom';
+import {Router, Route, browserHistory, hashHistory} from 'react-router';
+import {HashRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
 import reducers from '../src/reducers';
@@ -17,7 +17,7 @@ const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(thunk)
 ));
 
-const history = syncHistoryWithStore(browserHistory, store);
+const history = syncHistoryWithStore(hashHistory, store);
 
 ReactDOM.render(
     <Provider store={store}>

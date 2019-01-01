@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A dummy ecommerce site intended for testing purposes.",
   "private": true,
-  "homepage": "https://Hempy49.github.io/test-site/",
+  "homepage": "https://Hempy49.github.io/test-site",
   "dependencies": {
     "classnames": "^2.2.5",
     "gh-pages": "^2.0.1",
