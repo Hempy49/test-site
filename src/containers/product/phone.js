@@ -35,7 +35,7 @@ class Phone extends Component {
                 <BasketCart />
                 <div className='form-group'>
                 <h1>{phone.name}</h1>
-                <h2>${phone.price}</h2>
+                <h2>£{phone.price}</h2>
                 </div>
                 <Link to='/' className='btn btn-info btn-block'>
                 Back to store

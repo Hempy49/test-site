@@ -9,8 +9,9 @@ import {Provider} from 'react-redux';
 
 import reducers from '../src/reducers';
 import Layout from '../src/containers/layout/layout';
-import Phones from '../src/containers/phones/phones';
-import Phone from '../src/containers/phone/phone';
+import Phones from '../src/containers/product-list/phones';
+import Phone from '../src/containers/product/phone';
+import Basket from '../src/containers/basket';
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(thunk)
@@ -25,6 +26,7 @@ ReactDOM.render(
                 <Route path='/' component={Phones} />
             </Route>
             <Route path='/phones/:id' component={Phone} />
+            <Route path='/basket' component={Basket} />
         </Router>
     </Provider>,
     document.getElementById('root')

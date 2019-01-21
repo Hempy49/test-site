@@ -14,7 +14,7 @@ const BasketCart = ({totalBasketCount, totalPrice}) => {
             className="btn btn-primary btn-block btn-lg"    
             >
             <i className="fa fa-fa-shopping-cart" />
-            <span>{totalBasketCount} item(s) - ${totalPrice}</span>
+            <span>{totalBasketCount} item(s) - £{totalPrice}</span>
             </Link>
         </div>
     </div>
